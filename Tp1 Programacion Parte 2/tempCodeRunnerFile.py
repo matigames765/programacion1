@@ -1,0 +1,5 @@
+km_1litro = float(input("Ingrese la cantidad de kilometros que puede recorrer con un litro de combustible: "))
+capacidad = float(input("Ingrese que capacidad tiene el tanque de combustible: "))
+km_total = float(input("Ingrese cuantos kilometros en total recorreran: "))
+cantidad_tanques = km_total / (km_1litro * capacidad)
+print(f"La cantidad de tanques de combustibles necesarios es {cantidad_tanques}")
