@@ -1,37 +1,51 @@
-'''8.	Implementa el algoritmo de ordenamiento Merge Sort y úsalo para 
-ordenar una lista de números.'''
-def merge_sort(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        left_half = arr[:mid]
-        right_half = arr[mid:]
+mixed_list = [30,"cadena",56,"jorgito",20,"matias",89,"santiago"]
+number_list = []
+string_list = []
+for i in mixed_list:
+    if isinstance(i,int):
+        number_list.append(i)
+    else:
+        string_list.append(i)
 
-        merge_sort(left_half)
-        merge_sort(right_half)
+mixed_list_new = []
 
-        i = j = k = 0
+length = len(number_list) - 1
 
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
-                i += 1
-            else:
-                arr[k] = right_half[j]
-                j += 1
-            k += 1
+for i in range(len(number_list) - 1):
+    for j in range(length):
+        if (number_list[j] > number_list[j + 1]):
+            auxiliar_variable = number_list[j]
+            number_list[j] = number_list[j + 1]
+            number_list[j + 1] = auxiliar_variable
+        else:
+            pass
+    length -= 1
 
-        while i < len(left_half):
-            arr[k] = left_half[i]
-            i += 1
-            k += 1
+for i in number_list:
+    mixed_list_new.append(i)
 
-        while j < len(right_half):
-            arr[k] = right_half[j]
-            j += 1
-            k += 1
 
-array = [38, 27, 43, 3, 9, 82, 10]
-merge_sort(array)
-print("Arreglo ordenado:", array)
+length = len(string_list) - 1
+
+for i in range(len(string_list) - 1):
+    for j in range(length):
+        if (string_list[j][0] > string_list[j + 1][0]):
+            auxiliar_variable = string_list[j]
+            string_list[j] = string_list[j + 1]
+            string_list[j + 1] = auxiliar_variable
+        else:
+            pass
+    length -= 1
+
+print("Los elementos de la lista ordenados de forma ascendente quedan:")
+
+for i in string_list:
+    mixed_list_new.append(i)
+
+for i in range(len(mixed_list_new)):
+    if (i == len(mixed_list_new) - 1):
+        print(mixed_list_new[i])
+    else:
+        print(f"{mixed_list_new[i]},", end = " ")
 
 

@@ -278,17 +278,14 @@ for i in range(len(string_list) - 1):
 
 print("Los elementos de la lista ordenados de forma ascendente quedan:")
 
-for i in range(len(number_list)):
-    if (i == len(number_list) - 1):
-        print(number_list[i])
-    else:
-        print(f"{number_list[i]},", end = " ")
+for i in string_list:
+    mixed_list_new.append(i)
 
-for i in range(len(string_list)):
-    if (i == len(string_list) - 1):
-        print(string_list[i])
+for i in range(len(mixed_list_new)):
+    if (i == len(mixed_list_new) - 1):
+        print(mixed_list_new[i])
     else:
-        print(f"{string_list[i]},", end = " ")
+        print(f"{mixed_list_new[i]},", end = " ")
 
 
 '''8.	Implementa el algoritmo de ordenamiento Merge Sort y úsalo para 
